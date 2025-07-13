@@ -2,7 +2,7 @@
 
 ## [Paper](https://ojs.aaai.org/index.php/AAAI/article/view/32418) | [Model](https://drive.google.com/drive/folders/1D6qCEG-Iqy55zbcuXN7RviiCYEp0QAmQ?usp=sharing)
 
-> RRT-MVS: Recurrent Regularization Transformer for Multi-ViewStereo  
+> RRT-MVS: Recurrent Regularization Transformer for Multi-View Stereo  
 > Authors: Jianfei Jiang, Liyong Wang, Haochen Yu, Tianyu Hu, Jiansheng Chen, Huimin Ma<sup>*</sup>  
 > Institute: University of Science and Technology Beijing  
 > AAAI 2025  
