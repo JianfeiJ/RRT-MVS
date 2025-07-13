@@ -1,4 +1,4 @@
-﻿# RRT-MVS
+﻿# **RRT-MVS**
 
 ## [Paper](https://ojs.aaai.org/index.php/AAAI/article/view/32418) | [Model](https://drive.google.com/drive/folders/1D6qCEG-Iqy55zbcuXN7RviiCYEp0QAmQ?usp=sharing)
 
@@ -10,7 +10,7 @@
 ## Abstract
 Learning-based multi-view stereo methods aim to predict depth maps for reconstructing dense point clouds. These methods rely on regularization to reduce redundancy in the cost volume. However, existing methods have limitations: CNN-based regularization is restricted to local receptive fields, while Transformer-based regularization struggles with handling depth discontinuities. These limitations often result in inaccurate depth maps with significant noise, particularly noticeable in the boundary and background regions. In this paper, we propose a Recurrent Regularization Transformer for Multi-View Stereo (RRT-MVS), which addresses these limitations by regularizing the cost volume separately for depth and spatial dimensions. Specifically, we introduce Recurrent Self-Attention (R-SA) to aggregate global matching costs within and across the cost maps and filter out noisy feature correlations. Additionally, we present Depth Residual Attention (DRA) to aggregate depth correlations within the cost volume and a Positional Adapter (PA) to enhance 3D positional awareness in each 2D cost map, further augmenting the effectiveness of R-SA. Experimental results demonstrate that RRT-MVS achieves state-of-the-art performance on the DTU and Tanks-and-Temples datasets. Notably, RRT-MVS ranks first on both the Tanks-and-Temples intermediate and advanced benchmarks among all published methods.
 
-### Pipeline
+### RRT-MVS Pipeline
 <p align="center">
 <img src="assets/pipeline.png" width="100%">  
 </p>
@@ -147,11 +147,11 @@ Our results on DTU and Tanks and Temples (T&T) Dataset are listed in the tables.
 
 | T&T (Intermediate) | Mean ↑ | Family | Francis | Horse | Lighthouse | M60   | Panther | Playground | Train |
 | ------------------ | ------ | ------ | ------- | ----- | ---------- | ----- | ------- | ---------- | ----- |
-| Ours          | 68.16  | 82.54  | 72.31   | 61.44 | 69.89      | 65.35 | 68.88   | 64.45      | 60.48 |
+|     RRT-MVS (Ours)          | 68.16  | 82.54  | 72.31   | 61.44 | 69.89 | 65.35 | 68.88 | 64.45| 60.48 |
 
 | T&T (Advanced) | Mean ↑ | Auditorium | Ballroom | Courtroom | Museum | Palace   | Temple |
 | ------------------ | ------ | ------ | ------- | ----- | ---------- | ----- | ------- |
-| Ours          | 43.29  | 30.95  | 46.42   | 41.13 | 55.46      | 37.63 | 48.12   |
+| RRT-MVS (Ours)          | 43.29  | 30.95  | 46.42   | 41.13 | 55.46 | 37.63 | 48.12   |
 
 ## Citation
 If you find this work useful in your research, please consider citing the following preprint:
