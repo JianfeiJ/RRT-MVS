@@ -121,6 +121,7 @@ matlab -nodisplay
 BaseEvalMain_web 
 ComputeStat_web
 ```
+The matlab evaluation code is slow, we recommend [Fast DTU Evaluation Using GPU with Python](https://github.com/Gwencong/Fast-DTU-Evaluation) for fast validation, and the final result reported in paper is obtained by official matlab code.
 
 ### Testing on Tanks and Temples
 We recommend using the finetuned model ([pretrained model](https://drive.google.com/drive/folders/1D6qCEG-Iqy55zbcuXN7RviiCYEp0QAmQ?usp=sharing)) to test on Tanks and Temples benchmark. Similarly, specify `TNT_TESTPATH` and `TNT_CKPT_FILE` in `scripts/test_tnt_inter.sh` and `scripts/test_tnt_adv.sh`. To generate point cloud results, just run:
