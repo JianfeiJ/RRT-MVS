@@ -78,6 +78,7 @@ tanksandtemples
            ├── ...          
 ```
 Download processed data by ET-MVSNet [here](https://drive.google.com/file/d/17mTgTzjPV1KsazabRIU0J3p0_ogufi5R/view?usp=sharing).
+Evaluation with 21 input views with [new_pair.txt](https://1drv.ms/f/s!AnZvbwfkzTydkk0TEvkA7M8cRY92?e=ZjncP5) provided by [MVSFormer++](https://github.com/maybeLx/MVSFormerPlusPlus).
 
 
 
