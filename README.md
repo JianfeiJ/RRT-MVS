@@ -65,7 +65,7 @@ blendedmvs
 Download [Tanks and Temples](https://drive.google.com/file/d/13fpaSNy8WKSfkmshPCHDAlZPvvWGKyfu/view?usp=sharing) processed data by ET-MVSNet and MVSFormer++ and unzip it as:
 
 ```
-tanksandtemples                          
+tanksandtemples_1                          
        ├── advanced                 
        │   ├── Auditorium       
        │   ├── ...  
