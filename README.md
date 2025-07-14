@@ -162,6 +162,7 @@ If you find this work useful in your research, please consider citing the follow
   number={4},
   pages={3994--4002},
   year={2025}
+}
 ```
 
 
