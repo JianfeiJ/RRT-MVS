@@ -147,6 +147,8 @@ Our results on DTU and Tanks and Temples (T&T) Dataset are listed in the tables.
 | ------------------ | ------ | ------ | ------- | ----- | ---------- | ----- | ------- |
 |     Ours           | 43.29 | 30.95 | 46.42 | 41.13 | 55.46 | 37.63 | 48.12 |
 
+You can download reconstructed point clouds on both DTU and T&T [here](https://drive.google.com/drive/folders/1m3pOFd-SAtTpExCFnXolhBKu6Ys0WxCL?usp=sharing).
+
 ## Citation
 If you find this work useful in your research, please consider citing the following preprint:
 ```bibtex
