@@ -74,9 +74,6 @@ tanksandtemples
            ├── ...          
 ```
 
-Evaluation with 21 input views with [new_pair.txt](https://1drv.ms/f/s!AnZvbwfkzTydkk0TEvkA7M8cRY92?e=ZjncP5) provided by [MVSFormer++](https://github.com/maybeLx/MVSFormerPlusPlus).
-
-
 ## Training
 
 ### Training on DTU (NVIDIA RTX 3090 GPUs, 24G)
