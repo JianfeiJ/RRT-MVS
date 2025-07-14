@@ -502,11 +502,11 @@ if __name__ == '__main__':
         'Family': (1024, 1920),
         'Francis': (1024, 1920),
         'Horse': (1024, 1920),
-        'Train': (1024, 1920),
         'Lighthouse': (1024, 2048),
         'M60': (1024, 2048),
         'Panther': (640, 1216),
-        'Playground': (640, 1216)
+        'Playground': (640, 1216),
+        'Train': (1024, 1920),
     }
 
     if args.testlist != "all":
