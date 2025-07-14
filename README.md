@@ -62,7 +62,8 @@ blendedmvs
 
 #### 3. Tanks and Temples Dataset
 
-Download [Tanks and Temples](https://drive.google.com/file/d/1YArOJaX9WVLJh4757uE8AEREYkgszrCo/view) and  unzip it as:
+Download [Tanks and Temples](https://drive.google.com/file/d/17mTgTzjPV1KsazabRIU0J3p0_ogufi5R/view?usp=sharing) processed data by ET-MVSNet and MVSFormer++ and unzip it as:
+
 ```
 tanksandtemples                          
        ├── advanced                 
@@ -72,15 +73,13 @@ tanksandtemples
            ├── Family       
            ├── ...          
 ```
-Download processed data by ET-MVSNet [here](https://drive.google.com/file/d/17mTgTzjPV1KsazabRIU0J3p0_ogufi5R/view?usp=sharing).
 
 Evaluation with 21 input views with [new_pair.txt](https://1drv.ms/f/s!AnZvbwfkzTydkk0TEvkA7M8cRY92?e=ZjncP5) provided by [MVSFormer++](https://github.com/maybeLx/MVSFormerPlusPlus).
 
 
-
 ## Training
 
-### Training on DTU
+### Training on DTU (NVIDIA RTX 3090 GPUs, 24G)
 
 To train the model on DTU, specify ``DTU_TRAINING`` in ``./scripts/train_dtu.sh`` first and then run:
 ```
@@ -88,7 +87,7 @@ bash scripts/train_dtu.sh
 ```
 After training, you will get model checkpoints in `./checkpoints/dtu`.
 
-### Finetune on BlendedMVS
+### Finetune on BlendedMVS (NVIDIA RTX A6000 GPUs, 48G)
 
 To fine-tune the model on BlendedMVS, you need specify `BLD_TRAINING` and `BLD_CKPT_FILE` in `./scripts/train_bld.sh` first, then run:
 ```
@@ -102,7 +101,7 @@ bash scripts/train_bld.sh
 
 For DTU testing, we use the model ([pretrained model](https://drive.google.com/drive/folders/1D6qCEG-Iqy55zbcuXN7RviiCYEp0QAmQ?usp=sharing)) trained on DTU training dataset. Specify `DTU_TESTPATH` and `DTU_CKPT_FILE` in `./scripts/test_dtu.sh` first, then run the following command to generate point cloud results.
 ```
-bash scripts/test_dtu.sh exp_name
+bash scripts/test_dtu.sh
 ```
 For quantitative evaluation, download [SampleSet](http://roboimagedata.compute.dtu.dk/?page_id=36) and [Points](http://roboimagedata.compute.dtu.dk/?page_id=36) from DTU's website. Unzip them and place `Points` folder in `SampleSet/MVS Data/`. The structure is just like:
 ```
