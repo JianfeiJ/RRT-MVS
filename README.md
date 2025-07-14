@@ -62,7 +62,7 @@ blendedmvs
 
 #### 3. Tanks and Temples Dataset
 
-Download [Tanks and Temples](https://drive.google.com/file/d/13fpaSNy8WKSfkmshPCHDAlZPvvWGKyfu/view?usp=sharing) processed data by [ET-MVSNet](https://github.com/TQTQliu/ET-MVSNet) and [MVSFormer++](https://github.com/maybeLx/MVSFormerPlusPlus) and unzip it as:
+Download [Tanks and Temples](https://drive.google.com/file/d/1_3KEvxsx5JqB6PR7wZGpmMjEp86jAc_T/view?usp=sharing) processed data by [ET-MVSNet](https://github.com/TQTQliu/ET-MVSNet) and [MVSFormer++](https://github.com/maybeLx/MVSFormerPlusPlus) and unzip it as:
 
 ```
 tanksandtemples_1                          
