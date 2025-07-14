@@ -80,7 +80,7 @@ tanksandtemples_1
 
 To train the model on DTU, specify ``DTU_TRAINING`` in ``./scripts/train_dtu.sh`` first and then run:
 ```
-bash scripts/train_dtu.sh
+bash scripts/train_dtu.sh exp_name
 ```
 After training, you will get model checkpoints in `./checkpoints/dtu`.
 
@@ -88,7 +88,7 @@ After training, you will get model checkpoints in `./checkpoints/dtu`.
 
 To fine-tune the model on BlendedMVS, you need specify `BLD_TRAINING` and `BLD_CKPT_FILE` in `./scripts/train_bld.sh` first, then run:
 ```
-bash scripts/train_bld.sh
+bash scripts/train_bld.sh exp_name
 ```
 
 
@@ -98,7 +98,7 @@ bash scripts/train_bld.sh
 
 For DTU testing, we use the model ([pretrained model](https://drive.google.com/drive/folders/1D6qCEG-Iqy55zbcuXN7RviiCYEp0QAmQ?usp=sharing)) trained on DTU training dataset. Specify `DTU_TESTPATH` and `DTU_CKPT_FILE` in `./scripts/test_dtu.sh` first, then run the following command to generate point cloud results.
 ```
-bash scripts/test_dtu.sh
+bash scripts/test_dtu.sh exp_name
 ```
 For quantitative evaluation, download [SampleSet](http://roboimagedata.compute.dtu.dk/?page_id=36) and [Points](http://roboimagedata.compute.dtu.dk/?page_id=36) from DTU's website. Unzip them and place `Points` folder in `SampleSet/MVS Data/`. The structure is just like:
 ```
@@ -119,10 +119,10 @@ The matlab evaluation code is slow, we recommend [Fast DTU Evaluation Using GPU 
 ### Testing on Tanks and Temples
 We recommend using the finetuned model ([pretrained model](https://drive.google.com/drive/folders/1D6qCEG-Iqy55zbcuXN7RviiCYEp0QAmQ?usp=sharing)) to test on Tanks and Temples benchmark. Similarly, specify `TNT_TESTPATH` and `TNT_CKPT_FILE` in `scripts/test_tnt_inter.sh` and `scripts/test_tnt_adv.sh`. To generate point cloud results, just run:
 ```
-bash scripts/test_tnt_inter.sh
+bash scripts/test_tnt_inter.sh exp_name
 ```
 ```
-bash scripts/test_tnt_adv.sh
+bash scripts/test_tnt_adv.sh exp_name
 ``` 
 For quantitative evaluation, you can upload your point clouds to [Tanks and Temples benchmark](https://www.tanksandtemples.org/).
 
