@@ -139,11 +139,11 @@ Our results on DTU and Tanks and Temples (T&T) Dataset are listed in the tables.
 | ----------- | ------ | ------- | --------- |
 | Ours   | 0.309 | 0.261  | 0.285    |
 
-| T&T (Intermediate) | Mean ↑ | Family | Francis | Horse | Lighthouse | M60   | Panther | Playground | Train |
+| T&T (Inter.) | Mean ↑ | Family | Francis | Horse | Lighthouse | M60   | Panther | Playground | Train |
 | ------------------ | ------ | ------ | ------- | ----- | ---------- | ----- | ------- | ---------- | ----- |
 |     Ours           | 68.16  | 82.54 | 72.31 | 61.44 | 69.89 | 65.35 | 68.88 | 64.45| 60.48 |
 
-| T&T (Advanced) | Mean ↑ | Auditorium | Ballroom | Courtroom | Museum | Palace   | Temple |
+| T&T (Adv.) | Mean ↑ | Auditorium | Ballroom | Courtroom | Museum | Palace   | Temple |
 | ------------------ | ------ | ------ | ------- | ----- | ---------- | ----- | ------- |
 |     Ours           | 43.29 | 30.95 | 46.42 | 41.13 | 55.46 | 37.63 | 48.12 |
 
