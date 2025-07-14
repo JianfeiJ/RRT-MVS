@@ -18,7 +18,7 @@ class MVSDataset(Dataset):
     def build_metas(self):
         self.metas = []
         if self.split == 'intermediate':
-            self.scans = ['Family', 'Horse', 'Playground', 'Francis', 'Train', 'Lighthouse', 'M60', 'Panther']
+            self.scans = ['Family', 'Francis','Horse', 'Lighthouse', 'M60', 'Panther', 'Playground', 'Train']
 
         elif self.split == 'advanced':
             self.scans = ['Auditorium', 'Ballroom', 'Courtroom',
