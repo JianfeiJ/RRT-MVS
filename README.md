@@ -20,7 +20,7 @@ Learning-based multi-view stereo methods aim to predict depth maps for reconstru
 
 ```bash
 conda create -n rrtmvsnet python=3.10.8
-conda activate etmvsnet
+conda activate rrtmvsnet
 pip install -r requirements.txt
 pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 -f https://download.pytorch.org/whl/torch_stable.html
 ```
