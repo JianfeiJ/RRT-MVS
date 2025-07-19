@@ -490,15 +490,12 @@ class reg2d_hybrid(nn.Module):
                                             drop_rate=0., attn_drop_rate=0., drop_path_rate=0.1,
                                             norm_layer=nn.LayerNorm, patch_norm=True, input_channel=pe_channel, pe=pe)
 
-        # self.prob = nn.Conv3d(8, 1, 1, stride=1, padding=0)
-
         self.prob = nn.Sequential(
             nn.Conv3d(16, 8, 1, stride=1, padding=0),
             nn.ReLU(),
             nn.Conv3d(8, 1, 1, stride=1, padding=0)
         )
-        # self.depth_residual_attn = DRA(base_channel, base_channel)
-        # self.fusion = ConvBnReLU3D(16, 8)
+
 
     def forward(self, x, position3d=None):
 
@@ -509,14 +506,6 @@ class reg2d_hybrid(nn.Module):
         x1 = conv4 + self.conv7(x1)
         x1 = conv2 + self.conv9(x1)
         x1 = conv0 + self.conv11(x1)
-
-        # x = self.depth_residual_attn(x)
-
-        # if position3d is not None:
-        #     if self.use_pe_proj:
-        #         x = x + self.pe_proj(PositionEncoding3D(position3d, x.shape[1]))  # position encoding
-        #     else:
-        #         x = x + self.pe_proj(PositionEncoding3D(position3d, x.shape[1] // 3))  # position encoding
 
         x2 = self.down(conv0)
         x2 = self.RRT(x2, position3d)
@@ -531,88 +520,6 @@ class reg2d_hybrid(nn.Module):
 
         return x.squeeze(1)
 
-
-# class reg2d_hybrid(nn.Module):
-#     def __init__(self, input_channel=128, base_channel=32, conv_name='ConvBnReLU3D', img_size=(64, 80),
-#                  window_size=(16, 20), depths=[2], num_heads=[4], stage_idx=0):
-#         super(reg2d_hybrid, self).__init__()
-#         module = importlib.import_module("models.module")
-#         stride_conv_name = 'ConvBnReLU3D'
-#         self.conv0 = getattr(module, stride_conv_name)(input_channel, base_channel, kernel_size=(1, 3, 3),
-#                                                        pad=(0, 1, 1))
-#         self.conv1 = getattr(module, stride_conv_name)(base_channel, base_channel * 2, kernel_size=(1, 5, 5),
-#                                                        stride=(1, 2, 2), pad=(0, 2, 2))
-#         self.conv2 = getattr(module, conv_name)(base_channel * 2, base_channel * 2, kernel_size=(5, 3, 3), pad=(2, 1, 1))
-#
-#         self.conv3 = getattr(module, stride_conv_name)(base_channel * 2, base_channel * 4, kernel_size=(1, 5, 5),
-#                                                        stride=(1, 2, 2), pad=(0, 2, 2))
-#         self.conv4 = getattr(module, conv_name)(base_channel * 4, base_channel * 4, kernel_size=(5, 3, 3), pad=(2, 1, 1))
-#
-#         self.conv5 = getattr(module, stride_conv_name)(base_channel * 4, base_channel * 8, kernel_size=(1, 5, 5),
-#                                                        stride=(1, 2, 2), pad=(0, 2, 2))
-#         self.conv6 = getattr(module, conv_name)(base_channel * 8, base_channel * 8, kernel_size=(5, 3, 3), pad=(2, 1, 1))
-#
-#         self.conv7 = nn.Sequential(
-#             nn.ConvTranspose3d(base_channel * 8, base_channel * 4, kernel_size=(1, 5, 5), padding=(0, 2, 2),
-#                                output_padding=(0, 1, 1), stride=(1, 2, 2), bias=False),
-#             nn.BatchNorm3d(base_channel * 4),
-#             nn.ReLU(inplace=True))
-#
-#         self.conv9 = nn.Sequential(
-#             nn.ConvTranspose3d(base_channel * 4, base_channel * 2, kernel_size=(1, 5, 5), padding=(0, 2, 2),
-#                                output_padding=(0, 1, 1), stride=(1, 2, 2), bias=False),
-#             nn.BatchNorm3d(base_channel * 2),
-#             nn.ReLU(inplace=True))
-#
-#         self.conv11 = nn.Sequential(
-#             nn.ConvTranspose3d(base_channel * 2, base_channel, kernel_size=(1, 5, 5), padding=(0, 2, 2),
-#                                output_padding=(0, 1, 1), stride=(1, 2, 2), bias=False),
-#             nn.BatchNorm3d(base_channel),
-#             nn.ReLU(inplace=True))
-#
-#         self.stage_idx = stage_idx
-#         self.img_size = img_size
-#         self.window_size = window_size
-#         self.depths = depths
-#         self.num_heads = num_heads
-#
-#         self.down = nn.Sequential(
-#             nn.Conv3d(base_channel, base_channel * 8, kernel_size=(1, 2 ** stage_idx, 2 ** stage_idx),
-#                       stride=(1, 2 ** stage_idx, 2 ** stage_idx)),
-#             LayerNorm3D(base_channel * 8, eps=1e-6)
-#         )
-#
-#         self.up = nn.Sequential(
-#             nn.ConvTranspose3d(base_channel * 8, base_channel, kernel_size=(1, 2 ** stage_idx, 2 ** stage_idx),
-#                                stride=(1, 2 ** stage_idx, 2 ** stage_idx)),
-#             LayerNorm3D(base_channel, eps=1e-6)
-#         )
-#
-#         self.RRT = Transformer(img_size=self.img_size, in_chans=base_channel,
-#                                             depths=self.depths, num_heads=self.num_heads,
-#                                             window_size=self.window_size, mlp_ratio=4., qkv_bias=True, qk_scale=None,
-#                                             drop_rate=0., attn_drop_rate=0., drop_path_rate=0.1,
-#                                             norm_layer=nn.LayerNorm, patch_norm=True, input_channel=input_channel)
-#
-#         self.prob = nn.Conv3d(8, 1, 1, stride=1, padding=0)
-#
-#     def forward(self, x, position3d=None):
-#
-#         conv0 = self.conv0(x)
-#         conv2 = self.conv2(self.conv1(conv0))
-#         conv4 = self.conv4(self.conv3(conv2))
-#         x = self.conv6(self.conv5(conv4))
-#         x = conv4 + self.conv7(x)
-#         x = conv2 + self.conv9(x)
-#         x = conv0 + self.conv11(x)
-#
-#         x = self.down(x)
-#         x = self.RRT(x, position3d)
-#         x = self.up(x)
-#
-#         x = self.prob(x)
-#
-#         return x.squeeze(1)
 
 
 class FPN(nn.Module):
