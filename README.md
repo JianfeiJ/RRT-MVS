@@ -1,6 +1,6 @@
 ﻿# **RRT-MVS**
 
-## [Paper](https://ojs.aaai.org/index.php/AAAI/article/view/32418) | [Pretrained Models](https://drive.google.com/drive/folders/1D6qCEG-Iqy55zbcuXN7RviiCYEp0QAmQ?usp=sharing)
+## [Paper](https://ojs.aaai.org/index.php/AAAI/article/view/32418) | [Pretrained Models](https://drive.google.com/drive/folders/1D6qCEG-Iqy55zbcuXN7RviiCYEp0QAmQ?usp=sharing) | [Point Clouds](https://drive.google.com/drive/folders/1m3pOFd-SAtTpExCFnXolhBKu6Ys0WxCL?usp=sharing)
 
 > RRT-MVS: Recurrent Regularization Transformer for Multi-View Stereo  
 > Authors: Jianfei Jiang, Liyong Wang, Haochen Yu, Tianyu Hu, Jiansheng Chen, Huimin Ma<sup>*</sup>  
